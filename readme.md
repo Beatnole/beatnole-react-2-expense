@@ -3,8 +3,12 @@
 git init - crate a new git repo
 git status - view the changes to project code
 git log - view recent commits
-git add -m "MESSAGE HERE"
+git add .
 
-git commit - creates a new commit with files from staging area
+git commit -m "MESSAGE HERE" - creates a new commit with files from staging area
 
 git push -u origin master
+
+git push heroku master
+
+heroku logs
