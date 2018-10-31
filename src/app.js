@@ -9,10 +9,6 @@ import 'react-dates/lib/css/_datepicker.css'
 
 const store = configureStore()
 
-store.subscribe(() => {
-    console.log(store.getState())
-})
-
 const jsx = (
    <Provider store={store}>
    <AppRouter />
