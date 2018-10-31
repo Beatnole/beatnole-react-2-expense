@@ -63,7 +63,6 @@ export default class ExpenseForm extends React.Component {
                     type="text"
                     placeholder="description"
                     autoFocus
-                    spellcheck="true"
                     value={this.state.description}
                     onChange={this.onDescriptionChange}
                 />
@@ -83,11 +82,10 @@ export default class ExpenseForm extends React.Component {
                 />
                 <textarea
                     placeholder="Add a note for your expense (optional)"
-                    spellcheck="true"
                     value={this.state.note}
                     onChange={this.onNoteChange}
                 ></textarea>
-                <button accesskey="s">{this.props.expense ? 'Save' : 'Add'} Expense</button>
+                <button>{this.props.expense ? 'Save' : 'Add'} Expense</button>
             </form>
             </div>
         )
