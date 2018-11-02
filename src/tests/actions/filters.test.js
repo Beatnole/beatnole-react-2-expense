@@ -1,4 +1,4 @@
-import { setStartDate, setEndDate, setTextFilter, setSortByAmount, setSortByDate } from '../../actions/filters'
+import { setStartDate, setEndDate, setTextFilter, sortByAmount, sortByDate } from '../../actions/filters'
 import moment from 'moment'
 
 test('Setup setStartDate filter object', () => {
@@ -30,16 +30,16 @@ test('Setup SET_TEXT_FILTER object', () => {
         text: text
     })
 })
-test('Setup SET_SORT_BY_AMOUNT object', () => {
-    const action = setSortByAmount()
+test('Setup SORT_BY_AMOUNT object', () => {
+    const action = sortByAmount()
     expect(action).toEqual({
-        type: 'SET_SORT_BY_AMOUNT'
+        type: 'SORT_BY_AMOUNT'
     })
 })
-test('Setup SET_SORT_BY_DATE object', () => {
-    const action = setSortByDate()
+test('Setup SORT_BY_DATE object', () => {
+    const action = sortByDate()
     expect(action).toEqual({
-        type: 'SET_SORT_BY_DATE'
+        type: 'SORT_BY_DATE'
     })
 })
 
