@@ -33,25 +33,25 @@ test('setup edit expense action object', () => {
 
 test('should edit expense to database and store', (done) => {
     const store = createMockStore({})
-    const id = 1
-    const expenseData = {
+    const id = expenses[0].id
+    const updates = {
         description: 'EDIT Mouse',
         amount: 4000,
         createdAt: 4000,
         note: 'EDIT This one is better',
 }
-    store.dispatch(startEditExpense(id, expenseData)).then(() => {
+    store.dispatch(startEditExpense(id, updates)).then(() => {
         const actions = store.getActions()
         expect(actions[0]).toEqual({
             type: 'EDIT_EXPENSE',
             id: id,
             updates: {
-                ...expenseData
+                ...updates
             }
         })
             return database.ref(`expenses/${id}`).once('value')
     }).then((snapshot) => {
-        expect(snapshot.val()).toEqual(expenseData)
+        expect(snapshot.val()).toEqual(updates)
         done()
     })
 })
