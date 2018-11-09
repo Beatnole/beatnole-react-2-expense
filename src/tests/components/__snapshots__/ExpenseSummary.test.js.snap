@@ -7,6 +7,7 @@ exports[`ExpenseSummary Display with 1 expense 1`] = `
     1
      
     expense
+     of 
      totalling 
     $50.13
   </h1>
@@ -20,6 +21,7 @@ exports[`ExpenseSummary Display with 23 expenses 1`] = `
     23
      
     expenses
+     of 
      totalling 
     $1,245,250.13
   </h1>
