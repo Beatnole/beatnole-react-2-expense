@@ -18,6 +18,8 @@ const jsx = (
    <AppRouter />
    </Provider> 
 )
+export let userInfo = ''
+export let userPhoto = ''
 
 let hasRendered = false
 const renderApp = () => {
@@ -33,6 +35,14 @@ firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         store.dispatch(login(user.uid))
         console.log(user.displayName, user.email, user.providerData, user.providerData[0].providerId)
+        userPhoto = user.photoURL
+        userInfo = (
+            <div>
+                <p>{user.displayName}</p>
+                <span>{user.email}</span>
+            </div>
+        )
+        
         store.dispatch(startSetExpenses()).then(() => {
             renderApp()
             if (history.location.pathname === '/') {
