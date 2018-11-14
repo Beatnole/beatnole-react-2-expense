@@ -52,6 +52,8 @@ firebase.auth().onAuthStateChanged((user) => {
 
     } else {
         store.dispatch(logout())
+        userPhoto = ''
+        userInfo = ''
         renderApp()
         history.push('/')
     }
