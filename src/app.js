@@ -33,8 +33,6 @@ ReactDOM.render(<LoadingPage />, document.getElementById('app'))
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        store.dispatch(login(user.uid))
-        console.log(user.displayName, user.email, user.providerData, user.providerData[0].providerId)
         userPhoto = user.photoURL
         userInfo = (
             <div>
@@ -42,7 +40,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 <span>{user.email}</span>
             </div>
         )
-        
+        store.dispatch(login(user.uid,user.displayName, user.email, user.photoURL))
         store.dispatch(startSetExpenses()).then(() => {
             renderApp()
             if (history.location.pathname === '/') {
@@ -52,8 +50,6 @@ firebase.auth().onAuthStateChanged((user) => {
 
     } else {
         store.dispatch(logout())
-        userPhoto = ''
-        userInfo = ''
         renderApp()
         history.push('/')
     }

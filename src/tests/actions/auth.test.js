@@ -1,10 +1,13 @@
 import { login, logout } from '../../actions/auth'
 
 test('Setup Login action object', () => {
-    const  action = login('abc123')
+    const  action = login('abc123','name', 'email@beatnole.com', 'https://whoisthis.com')
     expect(action).toEqual({
         type: 'LOGIN',
-        uid: 'abc123'
+        uid: 'abc123',
+        name: 'name',
+        email: 'email@beatnole.com',
+        url: 'https://whoisthis.com'
     })
 })
 
