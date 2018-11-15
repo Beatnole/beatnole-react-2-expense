@@ -6,8 +6,11 @@
     font-size: $font-size-large;
     font-weight: 300;
     line-height: 1;
+    margin-top: $m-size;
     padding: $s-size;
     text-decoration: none;
+    text-align: center;
+    width: 14vw;
 }
 .button--link {
     background: none;
@@ -15,4 +18,10 @@
 
 .button--secondary {
     background: #888888;
+}
+
+.button-password-reset {
+    background: $dark-red;
+    
+    margin-top: $s-size;
 }

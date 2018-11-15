@@ -1,6 +1,5 @@
-import { firebase } from '../firebase/firebase'
 import database from '../firebase/firebase'
-import { auth } from 'firebase';
+
 
 export const addExpense = (expense) => ({
     type: 'ADD_EXPENSE',

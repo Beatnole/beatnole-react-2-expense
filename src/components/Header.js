@@ -17,7 +17,7 @@ export const Header = ({ startSignOut }) => (
             <div className="content-container__image ">
                 <div className="header__content--user_container">
                         <span className="header__title header__title--userinfo">{userInfo}</span>
-                        <img className="user-profile-image" src={userPhoto}/>
+                        // <img className="user-profile-image" src={userPhoto ? userPhoto : '/images/blue.ico'}/>
                 </div>
             </div>
         </div>
